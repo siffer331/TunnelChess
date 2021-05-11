@@ -1,0 +1,8 @@
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/bin/ExportRelease/TunnelChess.dll
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/bin/ExportRelease/TunnelChess.pdb
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/ExportRelease/TunnelChess.csprojAssemblyReference.cache
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/ExportRelease/TunnelChess.AssemblyInfoInputs.cache
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/ExportRelease/TunnelChess.AssemblyInfo.cs
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/ExportRelease/TunnelChess.csproj.CoreCompileInputs.cache
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/ExportRelease/TunnelChess.dll
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/ExportRelease/TunnelChess.pdb
