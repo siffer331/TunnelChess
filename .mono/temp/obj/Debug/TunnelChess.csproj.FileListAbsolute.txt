@@ -6,3 +6,11 @@
 /home/siffer/Projects/TunnelChess/.mono/temp/bin/Debug/TunnelChess.pdb
 /home/siffer/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.dll
 /home/siffer/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.pdb
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/bin/Debug/TunnelChess.dll
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/bin/Debug/TunnelChess.pdb
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.csprojAssemblyReference.cache
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.AssemblyInfoInputs.cache
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.AssemblyInfo.cs
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.csproj.CoreCompileInputs.cache
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.dll
+/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/Debug/TunnelChess.pdb

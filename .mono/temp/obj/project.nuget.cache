@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tcUCxL6TRglI+q7PFQRBM5V8wlXi2cdzkSjvBFp9pg3ex2d1Mlu2eWDqH2HAr7VHgWdzvt4rBr4OZS6mzZM4yA==",
+  "dgSpecHash": "NEYvgzHdj2LrjWa59/7/UBbZW+HcmZiXeYX8bv7pYFndf7nSe1gJXGFzXKTDxO8TtHW9z6uy9iPu7pFBcShHLw==",
   "success": true,
-  "projectFilePath": "/home/siffer/Projects/TunnelChess/TunnelChess.csproj",
+  "projectFilePath": "/home/siffer/Documents/Projects/TunnelChess/TunnelChess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

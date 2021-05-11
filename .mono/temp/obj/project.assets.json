@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/siffer/Projects/TunnelChess/TunnelChess.csproj",
+      "projectUniqueName": "/home/siffer/Documents/Projects/TunnelChess/TunnelChess.csproj",
       "projectName": "TunnelChess",
-      "projectPath": "/home/siffer/Projects/TunnelChess/TunnelChess.csproj",
+      "projectPath": "/home/siffer/Documents/Projects/TunnelChess/TunnelChess.csproj",
       "packagesPath": "/home/siffer/.nuget/packages/",
-      "outputPath": "/home/siffer/Projects/TunnelChess/.mono/temp/obj/",
+      "outputPath": "/home/siffer/Documents/Projects/TunnelChess/.mono/temp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/siffer/.config/NuGet/NuGet.Config"

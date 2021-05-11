@@ -80,7 +80,7 @@ public class Board {
 	}
 	
 	//get tiles a moveset from a tile is threatening
-	public List<int> GetThreatened(int tile, int piece) {
+	public List<int> GetThreatened(int tile, int piece, bool debug = false) {
 		List<int> canHit = new List<int>();
 		Vector3 p = ToV(tile);
 		int color = piece>>3;
@@ -90,14 +90,16 @@ public class Board {
 			Move m = Pieces.moves[piece][i];
 			Vector3 d = m.dir;
 			d.y *= forward;
-			for(int j = 1; ToI(p+j*d)>-1 && (j == 1 || m.line); j++) {
-				int newTile = ToI(p+j*d)^64;
+			for(int j = 1; ToI(p+j*d) > -1 && (j == 1 || m.line); j++) {
+				int newTile = ToI(p+j*d);
 				if(
-					m.kill &&
-					board[newTile] != 0 &&
-					(board[newTile]>>3) != color
-				) canHit.Add(newTile);
-				if(board[newTile^64] != 0) break;
+					debug ||
+					m.kill && board[newTile^64] != 0 &&
+					(board[newTile^64]>>3) != (board[tile]>>3)
+				) {
+					canHit.Add(newTile^64);
+				}
+				if(board[newTile] != 0) break;
 			}
 		}
 		return canHit;
@@ -137,7 +139,7 @@ public class Board {
 					long moveHash = hash;
 					if(
 						!turnSet.Contains(hash) &&
-						(!IsThreatened(color ? whiteKing1: blackKing1, color) ||
+						(!IsThreatened(color ? whiteKing1: blackKing1, color) &&
 						!IsThreatened(turn ? whiteKing2 : blackKing2, turn))
 					) {
 						if(
@@ -171,7 +173,7 @@ public class Board {
 			MakeMove(move, false);
 			long moveHash = hash;
 			if(!turnSet.Contains(hash) &&
-				(!IsThreatened(turn ? whiteKing1 : blackKing1, turn) ||
+				(!IsThreatened(turn ? whiteKing1 : blackKing1, turn) &&
 				!IsThreatened(turn ? whiteKing2 : blackKing2, turn))
 			) moves.Add(move);
 			UndoMove(move, false);
@@ -290,9 +292,9 @@ public class Board {
 		if(move.startPawnMove) enPessan = (move.toB+move.fromB)>>1;
 		if(enPessan >= 0) hash ^= hashingValues[enPessan&7];
 		//keep track of kings
-		if(move.fromB == blackKing1) whiteKing1 = move.toB;
+		if(move.fromB == whiteKing1) whiteKing1 = move.toB;
 		if(move.fromB == blackKing1) blackKing1 = move.toB;
-		if(move.fromB == blackKing2) whiteKing2 = move.toB;
+		if(move.fromB == whiteKing2) whiteKing2 = move.toB;
 		if(move.fromB == blackKing2) blackKing2 = move.toB;
 		//GD.Print(ToString());
 		hash ^= hashingValues[0];
@@ -331,9 +333,9 @@ public class Board {
 			pieces[color][move.rookFrom] = board[move.rookFrom];
 			pieces[color].Remove(move.rookTo);
 		}
-		if(move.toB == blackKing1) whiteKing1 = move.fromB;
+		if(move.toB == whiteKing1) whiteKing1 = move.fromB;
 		if(move.toB == blackKing1) blackKing1 = move.fromB;
-		if(move.toB == blackKing2) whiteKing2 = move.fromB;
+		if(move.toB == whiteKing2) whiteKing2 = move.fromB;
 		if(move.toB == blackKing2) blackKing2 = move.fromB;
 		turn = !turn;
 		hash ^= hashingValues[0];

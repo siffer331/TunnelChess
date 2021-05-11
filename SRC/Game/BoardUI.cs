@@ -39,6 +39,7 @@ public class BoardUI : Node2D
 	//  rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w
 	//  rnbq1k1r/pp1Pbppp/2p5/3B4/8/8/PPP1NnPP/RNBQK2R b
 	List<BoardMove> points = new List<BoardMove>();
+	List<int> highlights = new List<int>();
 	
 	//Draw board with colors
 	public override void _Draw() {
@@ -50,17 +51,17 @@ public class BoardUI : Node2D
 					Color overlay = c;
 					//if(board.IsThreatened(tile, board.turn)) overlay = new Color(1,0,0);
 					BoardMove m = PointsHas(tile);
+					foreach(int highlight in highlights) {
+						if(highlight == tile) {
+							overlay = new Color(0,1,0);
+							break;
+						}
+					}
 					if(stack.Count>0&&(tile==stack.Peek().toB||tile==stack.Peek().fromB))
 						overlay = selected;
 					if(m.toB != -1) {
 						overlay = avaliable;
 						if(board.board[tile] != 0) overlay = enemy;
-					}
-					foreach(int t in board.GetThreatened(board.whiteKing1, Pieces.Pawn)) {
-						if(t == tile) {
-							overlay = enemy;
-							break;
-						}
 					}
 					if(tile == selectedTile) overlay = selected;
 					//if(board.pieces[0].ContainsKey(tile)) overlay = new Color(1,1,1);
